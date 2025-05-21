@@ -15,7 +15,7 @@ load_dotenv()
 def load_document(file_path, file_type):
     if file_type == ".pdf":
         loader = PyPDFLoader(file_path)
-    elif file_type == ".doc":
+    elif file_type == ".docx":
         loader = Docx2txtLoader(file_path)
     elif file_type == ".txt":
         loader = TextLoader(file_path)
