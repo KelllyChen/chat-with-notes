@@ -63,3 +63,25 @@ def create_qa_chain(vectorstore):
 
 def answer_query(chain, query):
     return chain.run({"question": query})
+
+
+from langchain.chat_models import ChatOpenAI
+
+def generate_quiz_from_docs(docs):
+    text = "\n\n".join([doc.page_content for doc in docs])
+    prompt = f"""
+You are a tutor. Based on the following document, generate exactly 5 short-answer quiz questions.
+After each question, also provide the correct answer.
+
+Document:
+{text}
+
+Format your output like:
+1. [Question text]  
+Answer: [Short correct answer]
+
+2. ...
+    """
+    llm = ChatOpenAI(temperature=0.3)
+    response = llm.predict(prompt)
+    return response
