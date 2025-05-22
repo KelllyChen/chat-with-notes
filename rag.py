@@ -37,7 +37,7 @@ def create_qa_chain(vectorstore):
     # Create memory
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
-    # Custom prompt template to help LLM handle references like "this chapter"
+    
     prompt_template = PromptTemplate(
     input_variables=["chat_history", "question", "context"],
     template="""
