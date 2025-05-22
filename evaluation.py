@@ -6,7 +6,7 @@ from ragas import evaluate
 from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
 
 
-file_path = "Week 1 Slides.pdf"  
+file_path = "sample/Week 1 Slides.pdf"  
 file_type = ".pdf"
 
 docs = load_document(file_path, file_type)
@@ -70,4 +70,4 @@ evaluation_result = evaluate(data, metrics=metrics)
 
 # Save Results 
 df = evaluation_result.to_pandas()
-df.to_csv("evaluation_result.csv", index=False)
+df.to_csv("sample/evaluation_result.csv", index=False)
