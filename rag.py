@@ -85,3 +85,21 @@ Answer: [Short correct answer]
     llm = ChatOpenAI(temperature=0.3)
     response = llm.predict(prompt)
     return response
+
+
+def judge_answer(user_answer: str, correct_answer: str, question: str) -> bool:
+    prompt = f"""
+You are an AI quiz grader.
+
+Question: {question}
+Correct Answer: {correct_answer}
+Student's Answer: {user_answer}
+
+Decide if the student's answer demonstrates the same core idea or key facts as the correct answer.
+
+Only respond with one word: Correct or Incorrect.
+Be strict: If the student’s answer is vague, off-topic, incomplete, or uses the wrong concept, say Incorrect.
+"""
+    llm = ChatOpenAI(temperature=0, max_tokens=5)
+    result = llm.predict(prompt).strip().lower()
+    return result == "correct"
