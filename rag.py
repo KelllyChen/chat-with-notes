@@ -65,8 +65,6 @@ def answer_query(chain, query):
     return chain.run({"question": query})
 
 
-from langchain.chat_models import ChatOpenAI
-
 def generate_quiz_from_docs(docs):
     text = "\n\n".join([doc.page_content for doc in docs])
     prompt = f"""
