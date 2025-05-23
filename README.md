@@ -58,6 +58,7 @@ The streamlit app is deployed on AWS:
 http://3.27.172.192:8501
 
 ## Future Improvements
+-  Improve quiz evaluation logic: currently, user answers are sometimes marked incorrect if the order of items differs from the reference answer — plan to implement smarter matching 
 - Add user authentication for saving personalized sessions
 - Enable exporting generated quiz questions and answers
 - Add option to download full Q&A chat history
