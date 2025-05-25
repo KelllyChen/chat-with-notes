@@ -28,7 +28,7 @@ The full evaluation results are saved in: `sample/evaluation_result.csv`
 ## Setup Instructions
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/chat-with-your-notes.git
+git clone https://github.com/KelllyChen/chat-with-notes.git
 cd chat-with-your-notes
 ```
 ### 2. Create and Activate a Virtual Environment
